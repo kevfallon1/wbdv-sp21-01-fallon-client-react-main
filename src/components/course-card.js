@@ -21,7 +21,7 @@ const CourseCard = (
   }
 
   return (
-      <div className="card" style={{width: "18rem", margin: "15px"}}>
+      <div className="card course-card" style={{width: "18rem", margin: "15px"}}>
         <div className="card-body">
           {
             !editing &&
@@ -52,11 +52,7 @@ const CourseCard = (
               <i onClick={() => setEditing(true)} className="fas fa-2x fa-edit"></i>
             }
           </div>
-          <div>
-            <Link to="/editor" className="btn btn-primary">
-              Course Editor
-            </Link>
-          </div>
+
 
 
 

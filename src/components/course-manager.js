@@ -103,10 +103,14 @@ export default class CourseManager
                       deleteCourse={this.deleteCourse}
                   />
                 </Route>
+                <i onClick={this.addCourse}className="fas fa-2x float-right fa-plus-circle col-sm-2"></i>
 
               </div>
 
+
             </div>
+
+
           </div>
         </main>
     )

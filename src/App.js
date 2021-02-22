@@ -3,6 +3,8 @@ import CourseManager from "./components/course-manager";
 //import CourseEditor from "./components/course-editor";
 import {BrowserRouter, Route} from "react-router-dom";
 import CourseEditor from "./components/course-editor";
+import Home from "./components/home"
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
           {/*  <CourseEditor/>*/}
           {/*</div>*/}
           <Route path="/editor" exact={true} render={(props) => <CourseEditor {...props}/>}/>
+          <Route path="/" exact={true} component={Home}/>
         </div>
       </BrowserRouter>
   );

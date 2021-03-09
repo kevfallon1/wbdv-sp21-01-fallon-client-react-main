@@ -1,7 +1,26 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {Link, useParams, useHistory} from "react-router-dom";
+import moduleReducer from "../reducers/module-reducer";
+import lessonReducer from "../reducers/lesson-reducer";
+import {combineReducers, createStore} from "redux";
+import {Provider} from "react-redux";
+import ModuleList from "./module-list";
+import LessonList from "./lesson-list";
+import topicReducer from "../reducers/topic-reducer";
+import TopicList from "./topic-list";
 
-const CourseEditor = ({history}) =>
+const reducer = combineReducers({
+  moduleReducer: moduleReducer,
+  lessonReducer: lessonReducer,
+  topicReducer: topicReducer
+})
+
+const store = createStore(reducer)
+
+const CourseEditor = ({history, params}) => {
+  const {layout, courseId, moduleId} = useParams();
+  return(
+      <Provider store={store}>
     <main>
 
       <section className="editorContainer">
@@ -26,30 +45,9 @@ const CourseEditor = ({history}) =>
           </div>
         </div>
         <div className="row" id="contentContainer">
-          <div className="moduleListContainer col-lg-3">
-
-            <div className="link">
-              <h2>Module 1: Stuff</h2>
-            </div>
-            <div className="link">
-              <h2>
-                Module 2
-              </h2>
-            </div>
-            <div className="link">
-              <h2>
-                Module 3
-              </h2>
-            </div>
-            <div className="link">
-              <h2>
-                Module 4
-              </h2>
-            </div>
-            <div className="addModuleButtonContainer"
-                 className="align-self-end">
-              <a className="myButton">Add</a>
-              <a className="myButton">Delete</a>
+          <div className="moduleListContainer col-sm-3">
+            <div>
+              <ModuleList/>
             </div>
 
 
@@ -66,51 +64,16 @@ const CourseEditor = ({history}) =>
                       aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 1 <i
-                        className="fa fa-trash"></i><span
-                        className="sr-only">(current)</span></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 2 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 3 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Lesson 4 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">+</a>
-                  </li>
-                </ul>
-              </div>
+
+
+              <LessonList/>
+
+
+
+
             </nav>
 
-              <div className="topics">
-                <ul className="float-right nav nav-pills row">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">+</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Topic 3 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">Topic 2 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link active" href="#">Topic 1 <i
-                        className="fa fa-trash"></i></a>
-                  </li>
-                </ul>
-              </div>
+              <TopicList/>
 
 
 
@@ -213,6 +176,7 @@ const CourseEditor = ({history}) =>
       </section>
 
     </main>
+      </Provider>)}
 
 // const CourseEditor = () => {
 //   return (

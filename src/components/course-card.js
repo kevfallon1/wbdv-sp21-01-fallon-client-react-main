@@ -21,11 +21,11 @@ const CourseCard = (
   }
 
   return (
-      <div className="card course-card" style={{width: "18rem", margin: "15px"}}>
+      <div className="card" style={{width: "18rem", margin: "15px"}}>
         <div className="card-body">
           {
             !editing &&
-            <Link to="/editor">
+            <Link to={`/courses/table/edit/${course._id}`}>
               {course.title}
             </Link>
           }

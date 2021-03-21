@@ -1,6 +1,7 @@
+const URL = "https://wbdv-sp21-03-fallon-server-jav.herokuapp.com/api"
 
 export const createWidget = (topicId, widget) =>
-  fetch(`http://localhost:8080/api/topics/${topicId}/widgets`, {
+  fetch(`${URL}/topics/${topicId}/widgets`, {
     method: 'POST',
     body: JSON.stringify(widget),
     headers: {
@@ -11,16 +12,16 @@ export const createWidget = (topicId, widget) =>
 
 
 export const findWidgetsForTopic = (topicId) =>
-    fetch(`http://localhost:8080/api/topics/${topicId}/widgets`)
+    fetch(`${URL}/topics/${topicId}/widgets`)
     .then(response => response.json())
 
 export const deleteWidget = (widgetId) =>
-    fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
+    fetch(`${URL}/widgets/${widgetId}`, {
       method: "DELETE"
     }).then(response => response.json());
 
 export const updateWidget = (widgetId, widget) =>
-    fetch(`http://localhost:8080/api/widgets/${widgetId}`, {
+    fetch(`${URL}/widgets/${widgetId}`, {
       method: "PUT",
       body: JSON.stringify(widget),
       headers: {

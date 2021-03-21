@@ -2,8 +2,7 @@ const initialState = {
   modules: [
 
   ],
-  asdf: 111,
-  dfgdfgdfg: 345345
+
 }
 
 const moduleReducer = (state = initialState, action) => {

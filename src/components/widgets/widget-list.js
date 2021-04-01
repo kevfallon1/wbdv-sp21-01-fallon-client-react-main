@@ -4,6 +4,8 @@ import ParagraphWidget from "./paragraph-widget";
 import {useParams} from "react-router-dom"
 import widgetService from "../../services/widget-service"
 import {connect} from "react-redux"
+import ImageWidget from "./image-widget";
+import ListWidget from "./list-widget";
 
 const WidgetList = (
     {
@@ -54,6 +56,20 @@ const WidgetList = (
                         deleteWidget={deleteWidget}
                         widget={_widget}/>
                   }
+                  {
+                    _widget.type === "IMAGE" &&
+                    <ImageWidget
+                      updateWidget={updateWidget}
+                      deleteWidget={deleteWidget}
+                      widget={_widget}/>
+                  }
+                  {
+                    _widget.type === "LIST" &&
+                      <ListWidget
+                        updateWidget={updateWidget}
+                        deleteWidget={deleteWidget}
+                        widget={_widget}/>
+                  }
                 </li>
             )
           }
@@ -70,7 +86,7 @@ const dtpm = (dispatch) => ({
   createWidget: (topicId) => {
     if(topicId !== "undefined" && typeof topicId !== "undefined") {
       widgetService.createWidget(topicId,
-          {type: "HEADING", size: 2, text: "New Widget"})
+          {type: "HEADING", size: 2, text: "New Widget", ordered: false})
       .then(widget => dispatch({type: "CREATE_WIDGET", widget: widget}))
     } else {
       alert("Topic must be selected to add widgets")

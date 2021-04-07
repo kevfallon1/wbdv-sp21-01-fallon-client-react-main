@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/api"
+const URL = "https://wbdv-sp21-03-fallon-server-jav.herokuapp.com/api"
 
 export const createWidget = (topicId, widget) =>
   fetch(`${URL}/topics/${topicId}/widgets`, {

@@ -41,6 +41,7 @@ const CourseRow = (
         </td>
         <td className="d-none d-sm-table-cell">{course.owner}</td>
         <td className="d-none d-lg-table-cell">{course.lastModified}</td>
+        <td className="d-none d-sm-table-cell"><Link to={`/courses/${course._id}/quizzes`}>Quizzes</Link></td>
         <td>
             <i onClick={() => deleteCourse(course)} className="fas  fa-trash"></i>
             {/*<i onClick={() => setEditing((prevEditing) => !prevEditing)} className="fas fa-edit"></i>*/}

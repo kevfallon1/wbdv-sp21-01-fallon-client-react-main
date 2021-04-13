@@ -23,7 +23,7 @@ const MultipleChoiceQuestion = ({question}) => {
                   <li className="list-group-item list-group-item-success">
                     <label>
                       <input
-                          type="radio" name={question._id}/>
+                          type="radio" name={question._id} disabled={true}/>
                       {choice}
                     </label>
                     <i className="fas fa-check"></i></li>
@@ -37,6 +37,16 @@ const MultipleChoiceQuestion = ({question}) => {
                     </label>
                     <i className="fas fa-times"></i></li>
               )
+            } else if(graded){
+              return (
+                  <li className="list-group-item">
+                    <label>
+                      <input
+                          onClick={() => setAnswer(choice)}
+                          type="radio" name={question._id} disabled={true}/>
+                      {choice}
+                    </label></li>
+              )
             } else {
               return (
                   <li className="list-group-item">
@@ -45,8 +55,7 @@ const MultipleChoiceQuestion = ({question}) => {
                           onClick={() => setAnswer(choice)}
                           type="radio" name={question._id}/>
                       {choice}
-                    </label></li>
-              )
+                    </label></li>)
             }
           })
         }

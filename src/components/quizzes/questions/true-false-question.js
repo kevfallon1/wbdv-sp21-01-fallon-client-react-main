@@ -45,7 +45,7 @@ const TrueFalseQuestion = ({question}) => {
             <li className="list-group-item list-group-item-success"><label><input
                 type="radio"
                 onClick={() => setAnswer(true)}
-                name={question._id}/>True</label>
+                name={question._id} disabled={true}/>True</label>
               <i className="fas fa-check"></i>
             </li>
           }
@@ -55,7 +55,7 @@ const TrueFalseQuestion = ({question}) => {
               <label><input
                   type="radio"
                   onClick={() => setAnswer(false)}
-                  name={question._id}/>False</label>
+                  name={question._id} disabled={true}/>False</label>
               <i className="fas fa-times"></i>
             </li>
           }
@@ -65,7 +65,7 @@ const TrueFalseQuestion = ({question}) => {
               <label><input
                   type="radio"
                   onClick={() => setAnswer(false)}
-                  name={question._id}/>False</label>
+                  name={question._id} disabled={true}/>False</label>
 
             </li>
           }
@@ -75,7 +75,7 @@ const TrueFalseQuestion = ({question}) => {
               <label><input
                   type="radio"
                   onClick={() => setAnswer(true)}
-                  name={question._id}/>True</label>
+                  name={question._id} disabled={true}/>True</label>
               <i className="fas fa-times"></i>
             </li>
           }
@@ -85,7 +85,7 @@ const TrueFalseQuestion = ({question}) => {
               <label><input
                   type="radio"
                   onClick={() => setAnswer(true)}
-                  name={question._id}/>True</label>
+                  name={question._id} disabled={true}/>True</label>
 
             </li>
           }
@@ -95,7 +95,7 @@ const TrueFalseQuestion = ({question}) => {
               <label><input
                   type="radio"
                   onClick={() => setAnswer(false)}
-                  name={question._id}/>False</label>
+                  name={question._id} disabled={true}/>False</label>
               <i className="fas fa-check"></i>
             </li>
           }

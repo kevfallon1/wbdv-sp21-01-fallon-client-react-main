@@ -23,6 +23,7 @@ export default class CourseTable extends
             <thead>
             <th>Course Name</th>
             <th className="d-none d-sm-table-cell">Owned By</th>
+            <th className="d-none d-lg-table-cell"></th>
             <th className="d-none d-lg-table-cell">Last Modified</th>
 
             </thead>

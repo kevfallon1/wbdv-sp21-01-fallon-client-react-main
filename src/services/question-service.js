@@ -1,4 +1,4 @@
-const URL = "http://wbdv-sp21-fallon-server-node.herokuapp.com"
+const URL = "https://wbdv-sp21-fallon-server-node.herokuapp.com"
 
 export const findQuestionsForQuiz = (quizId) =>
     fetch(`${URL}/api/quizzes/${quizId}/questions`)

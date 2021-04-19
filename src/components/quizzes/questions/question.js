@@ -2,13 +2,14 @@ import React from "react";
 import TrueFalseQuestion from "./true-false-question";
 import MultipleChoiceQuestion from "./multiple-choice-question";
 
-const Question = ({question}) => {
+const Question = ({question}, {setQuestions}) => {
   return(
       <div>
         {
           question.type === "TRUE_FALSE" &&
           <TrueFalseQuestion
-              question={question}/>
+              question={question}
+              setQuestions={setQuestions}/>
         }
         {
           question.type === "MULTIPLE_CHOICE" &&

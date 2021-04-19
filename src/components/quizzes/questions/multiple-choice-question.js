@@ -60,9 +60,7 @@ const MultipleChoiceQuestion = ({question}) => {
           })
         }
         </ul>
-        <div>
-          <button onClick={() => setGraded(true)} className="btn btn-primary">Grade</button>
-        </div>
+
       </div>
   )
 }
